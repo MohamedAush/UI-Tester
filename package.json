@@ -1,0 +1,31 @@
+{
+  "name": "ui-testing-tool",
+  "version": "1.0.0",
+  "description": "E2E UI Testing Tool for Vue.js applications using Puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "test": "node run-tests.js",
+    "test:headless": "HEADLESS=true node run-tests.js",
+    "test:debug": "HEADLESS=false SLOW_MO=100 node run-tests.js",
+    "test:watch": "nodemon --exec 'npm test'",
+    "generate:report": "node generate-report.js"
+  },
+  "keywords": [
+    "testing",
+    "e2e",
+    "puppeteer",
+    "vue",
+    "automation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "puppeteer": "^22.0.0",
+    "jest": "^29.0.0",
+    "nodemon": "^3.0.0"
+  },
+  "dependencies": {},
+  "allowScripts": {
+    "puppeteer@22.15.0": true
+  }
+}
