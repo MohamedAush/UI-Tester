@@ -4,7 +4,8 @@
  */
 
 module.exports = {
-  testEnvironment: 'node',
+  testEnvironment: '<rootDir>/test/environment/puppeteer-failure-environment.js',
+  reporters: ['default', '<rootDir>/test/reporters/dashboard-reporter.js'],
   testMatch: ['**/test/specs/**/*.spec.js'],
   testTimeout: 60000,
   forceExit: true,

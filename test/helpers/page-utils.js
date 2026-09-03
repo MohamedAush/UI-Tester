@@ -3,6 +3,7 @@
  * Common helper functions for page interactions
  */
 
+const fs = require('fs');
 const path = require('path');
 const config = require('../../puppeteer.config');
 
@@ -118,6 +119,7 @@ class PageUtils {
    */
   static async screenshot(page, filename) {
     const filePath = path.join(config.screenshot.path, filename);
+    fs.mkdirSync(path.dirname(filePath), { recursive: true });
     await page.screenshot({
       path: filePath,
       fullPage: config.screenshot.fullPage,

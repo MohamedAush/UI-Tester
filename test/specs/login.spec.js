@@ -14,6 +14,7 @@ describe('Login Page', () => {
   beforeAll(async () => {
     browserHelper = new BrowserHelper();
     await browserHelper.init();
+    global.__BROWSER_HELPER__ = browserHelper;
   });
 
   beforeEach(async () => {

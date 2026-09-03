@@ -136,13 +136,20 @@ npm test
 ├── puppeteer.config.js         # Browser config
 ├── jest.config.js              # Test config
 ├── run-tests.js                # Test runner
-├── generate-report.js          # Report generator
 ├── README.md                   # Full docs
 ├── QUICKSTART.md               # This file
+├── dashboard/
+│   ├── server.js                # Dashboard server
+│   └── public/                  # Dashboard UI
 └── test/
     ├── helpers/
     │   ├── browser.js          # Browser management
-    │   └── page-utils.js       # Common utilities
+    │   ├── page-utils.js       # Common utilities
+    │   └── screenshot-naming.js # Shared screenshot filename convention
+    ├── environment/
+    │   └── puppeteer-failure-environment.js # Auto screenshot on failure
+    ├── reporters/
+    │   └── dashboard-reporter.js # Writes test/reports/*.json for the dashboard
     ├── page-objects/
     │   ├── base-page.js        # Base class
     │   ├── login-page.js       # Example
@@ -169,8 +176,8 @@ npx jest test/specs/login.spec.js
 # Run tests matching pattern
 npx jest --testNamePattern="login"
 
-# Generate report
-npm run generate:report
+# View results in the dashboard
+npm run dashboard
 
 # Watch mode
 npm run test:watch

@@ -24,6 +24,7 @@ module.exports = {
   screenshot: {
     enabled: true,
     path: 'test/screenshots',
-    fullPage: true
+    fullPage: true,
+    onFailure: true
   }
 };
